@@ -7,13 +7,17 @@ public class WaterContainer : MonoBehaviour
     public float maxWater = 100f;
     public float waterLossRate = 0f;
     public GameHUD gameHUD;
-void Awake()
-{
-    if (instance == null)
-        instance = this;
-    else
-        Destroy(gameObject);
-}
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
+    void Start()
+    {
+        gameHUD = FindObjectOfType<GameHUD>();
+    }
     public void LoseWater(float amount)
     {
         currentWater -= amount;

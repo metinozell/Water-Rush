@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public int currentLevel = 1;
     public enum GameState
     {
         Start,
@@ -16,11 +17,13 @@ public class GameManager : MonoBehaviour
     {
         currentState = GameState.Playing;
     }
+
    /*public void EndGame()
     {
         currentState = GameState.End;
         GameHUD.instance.ShowEndPanel();
     }*/
+
     void Awake()
     {
         if (instance == null)
