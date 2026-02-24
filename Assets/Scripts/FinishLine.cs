@@ -45,9 +45,6 @@ public class FinishLine : MonoBehaviour
             PlayerMovement.instance.enabled = false;
             PlayerMovement.instance.isMoving = false;
         }
-
-        //float water = WaterContainer.instance.GetWaterPercentage();
-        //int stars = ScoreManager.instance.CalculateStars(water);
         
         SaveManager.instance.SaveLevelProgress(GameManager.instance.currentLevel, stars);
         SaveManager.instance.UnlockLevel(GameManager.instance.currentLevel + 1);

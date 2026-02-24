@@ -84,7 +84,8 @@ public class LevelSelector : MonoBehaviour
     {
         Debug.Log("Loading Level " + levelNumber);
         int sceneIndex = levelNumber + 1;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneIndex);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene(sceneIndex);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level_" + levelNumber);
     }
 
     public void BackToMainMenu()

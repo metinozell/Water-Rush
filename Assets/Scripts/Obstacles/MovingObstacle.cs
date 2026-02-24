@@ -13,7 +13,7 @@ public class MovingObstacles : MonoBehaviour
 
     void Update()
     {
-        float newY = startPosition.x + Mathf.PingPong(Time.time * moveSpeed, moveRange * 2) - moveRange;
-        transform.position =new Vector3(newY, transform.position.y, transform.position.z);
+        float newX = startPosition.x + Mathf.PingPong(Time.time * moveSpeed, moveRange * 2) - moveRange;
+        transform.position =new Vector3(newX, transform.position.y, transform.position.z);
     }
 }

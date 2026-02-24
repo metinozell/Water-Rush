@@ -4,16 +4,21 @@ public class SlipperyFloor : MonoBehaviour
 {
     public float slipMultiplier = 1.5f;
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        WaterContainer waterContainer = other.GetComponent<WaterContainer>();
-        WaterContainer.instance.waterLossRate *= slipMultiplier;
-        Debug.Log("Player is on slippery floor, increasing water loss rate.");
+        if (other.CompareTag("Player"))
+        {
+            WaterContainer.instance.waterLossRate *= slipMultiplier;
+            Debug.Log("The character ENTERED the slippery floor, the water leak " + slipMultiplier + " increased by a floor.");
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
-        WaterContainer.instance.waterLossRate /= slipMultiplier;
-        Debug.Log("Player exited slippery floor, restoring water loss rate.");
+        if (other.CompareTag("Player"))
+        {
+            WaterContainer.instance.waterLossRate /= slipMultiplier;
+            Debug.Log("The character EXITED the slippery floor, the water leak rate returned to normal.");
+        }
     }
 }

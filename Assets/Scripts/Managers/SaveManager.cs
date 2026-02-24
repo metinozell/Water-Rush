@@ -55,15 +55,40 @@ public class SaveManager : MonoBehaviour
         }
         return total;
     }
-    
+
     public void UnlockLevel(int levelNumber)
     {
         int nextLevel = GameManager.instance.currentLevel + 1;
-        if(nextLevel <= totalLevels)
+        if (nextLevel <= totalLevels)
         {
             string key = "Level_" + nextLevel + "_Unlocked";
             PlayerPrefs.SetInt(key, 1);
             PlayerPrefs.Save();
+        }
+    }
+
+    public int GetTotalCoins()
+    {
+        return PlayerPrefs.GetInt("TotalCoins", 0);
+    }
+    public void AddCoins(int amount)
+    {
+        int currentCoins = GetTotalCoins();
+        PlayerPrefs.SetInt("TotalCoins", currentCoins + amount);
+        PlayerPrefs.Save();
+    }
+    public bool SpendCoins(int amount)
+    {
+        int current = GetTotalCoins();
+        if (current >= amount)
+        {
+            PlayerPrefs.SetInt("TotalCoins", current - amount);
+            PlayerPrefs.Save();
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

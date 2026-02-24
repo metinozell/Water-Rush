@@ -22,8 +22,10 @@ public class LevelLoader : MonoBehaviour
     public void RestartLevel()
     {
         Time.timeScale = 1f;
+        GameManager.instance.currentState = GameManager.GameState.Playing;
         int currentIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentIndex);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
     public void LoadLevel(int levelIndex)

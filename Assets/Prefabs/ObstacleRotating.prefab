@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 700908321945638456}
   - component: {fileID: 1860851666710242040}
   - component: {fileID: 1555019750148214821}
+  - component: {fileID: 9144032141920018982}
   m_Layer: 0
   m_Name: ObstacleRotating
   m_TagString: Untagged
@@ -113,3 +114,16 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &9144032141920018982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370364466504148670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06a5c289eab6b94caa1ced62380cac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotatingObstacle
+  rotationSpeed: 100

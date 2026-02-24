@@ -6,8 +6,14 @@ public class Ramp : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        WaterContainer waterContainer = collision.gameObject.GetComponent<WaterContainer>();
-        waterContainer.LoseWater(rampDamage);
-        Debug.Log("Player collided with ramp and lost " + rampDamage + " water.");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            WaterContainer waterContainer = collision.gameObject.GetComponent<WaterContainer>();
+            if (waterContainer != null)
+            {
+                waterContainer.LoseWater(rampDamage);
+                Debug.Log("Player collided with ramp and lost " + rampDamage + " water.");
+            }
+        }
     }
 }

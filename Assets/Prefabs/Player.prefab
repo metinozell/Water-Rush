@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2125889231361588717}
   - component: {fileID: 816376884603840223}
   - component: {fileID: 1862604897343657546}
+  - component: {fileID: 4421864611887483005}
+  - component: {fileID: 8341536575492681629}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -141,3 +143,41 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &4421864611887483005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944655234980051437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abdbae812d9af904aaff31f3eb29a5f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  moveSpeed: 5
+  isMoving: 0
+  endPoint: {fileID: 0}
+  startPoint: {fileID: 0}
+  currentLane: 1
+  laneDistance: 2
+  laneSpeed: 5
+--- !u!114 &8341536575492681629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944655234980051437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a159643cb11c0d48b91f414114ac9fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaterContainer
+  currentWater: 100
+  maxWater: 100
+  waterLossRate: 2
+  gameHUD: {fileID: 0}
+  containerData: {fileID: 11400000, guid: 09f128a878fe859439a1a701eccdc58c, type: 2}
+  isInvincible: 0
+  invincibilityTime: 0.5
